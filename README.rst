@@ -1,12 +1,12 @@
-======================
+=============
 EEA Downloads
-======================
+=============
 .. image:: http://ci.eionet.europa.eu/job/eea.downloads-www/badge/icon
   :target: http://ci.eionet.europa.eu/job/eea.downloads-www/lastBuild
 .. image:: http://ci.eionet.europa.eu/job/eea.downloads-plone4/badge/icon
   :target: http://ci.eionet.europa.eu/job/eea.downloads-plone4/lastBuild
 
-EEA Downloads Media Storage
+EEA Downloads (Media Storage) mounts a file-system directory within ZODB
 
 Contents
 ========
@@ -16,31 +16,47 @@ Contents
 Main features
 =============
 
-1.
-2.
-3.
+1. Mounts a file-system directory within ZODB
 
 Install
 =======
 
-- Add eea.downloads to your eggs section in your buildout and re-run buildout.
-  You can download a sample buildout from
+- Within your buildout define environment-vars per instance::
+
+    [instance]
+    environment-vars +=
+      EEADOWNLOADS_NAME downloads
+      EEADOWNLOADS_PATH ${buildout:directory}/var/downloads
+
+
+- Make sure that registered file-system directory exists and the
+  zope effective-user has read access there::
+
+    $ mkdir -p var/downloads
+
+- Add eea.downloads to your eggs section in your buildout and re-run buildout::
+
+    [instance]
+    eggs +=
+      eea.downloads
+    zcml +=
+      eea.downloads
+
+- You can download a sample buildout from
   https://github.com/eea/eea.downloads/tree/master/buildouts/plone4
 - Install eea.downloads within Site Setup > Add-ons
 
 Getting started
 ===============
 
-1.
-2.
-3.
+1. Login to ZMI
+2. Navigate to Plone > downloads
 
 Dependencies
 ============
 
-1.
-2.
-3.
+1. `Products.CMFCore`_
+2. `collective.monkeypatcher`_
 
 Source code
 ===========
@@ -69,3 +85,5 @@ Funding
 EEA_ - European Environment Agency (EU)
 
 .. _EEA: http://www.eea.europa.eu/
+.. _`collective.monkeypatcher`: http://pypi.python.org/pypi/collective.monkeypatcher
+.. _`Products.CMFCore`: http://pypi.python.org/pypi/Products.CMFCore

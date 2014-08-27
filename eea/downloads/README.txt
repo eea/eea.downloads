@@ -1,6 +1,6 @@
-================
+=============
 EEA Downloads
-================
+=============
 EEA Downloads Media Storage
 
 .. contents::
@@ -14,9 +14,8 @@ Installation
 Getting started
 ===============
 
-1.
-2.
-3.
+1. Login to ZMI
+2. Navigate to Plone > downloads to see your file-system directory content
 
 Authors
 =======
