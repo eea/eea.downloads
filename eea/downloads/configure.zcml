@@ -5,6 +5,7 @@
 
   <includeDependencies package="."/>
 
+  <include file="patches.zcml" />
   <include file="profiles.zcml" />
 
   <include package=".upgrades" />

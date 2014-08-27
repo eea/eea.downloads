@@ -9,7 +9,7 @@ from eea.downloads.config import PROJECTNAME
 
 logger = logging.getLogger('eea.downloads')
 
-class DirectoryInformation(DirectoryView.DirectoryInformation):
+class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
     """ Custom Directoy Information
     """
     def _changed(self):
@@ -39,28 +39,6 @@ def registerDirectory(filepath):
     """
     return DirectoryView._dirreg.registerDirectoryByKey(filepath, PROJECTNAME)
 
-#
-# Monkey patch DirectoryRegistry
-#
-def wrapper(func):
-    def registerDirectoryByKey(self, filepath, reg_key, subdirs=1,
-                                   ignore=DirectoryView.ignore):
-        if 'eea.downloads' in reg_key:
-            info = DirectoryInformation(filepath, reg_key, ignore)
-            self._directories[reg_key] = info
-            if subdirs:
-                for entry in info.getSubdirs():
-                    entry_filepath = os.path.join(filepath, entry)
-                    entry_reg_key = '/'.join((reg_key, entry))
-                    self.registerDirectoryByKey(entry_filepath, entry_reg_key,
-                                                subdirs, ignore)
-        else:
-            return func(self, filepath, reg_key, subdirs, ignore)
-
-    return registerDirectoryByKey
-
-DirectoryView.DirectoryRegistry.registerDirectoryByKey = wrapper(
-    DirectoryView.DirectoryRegistry.registerDirectoryByKey)
 
 DirectoryView.registerFileExtension('epub', FSFile.FSFile)
 

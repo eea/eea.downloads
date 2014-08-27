@@ -38,6 +38,7 @@ setup(name=NAME,
           'setuptools',
           # -*- Extra requirements: -*-
           'Products.CMFCore',
+          'collective.monkeypatcher'
       ],
       entry_points="""
       # -*- entry_points -*-
