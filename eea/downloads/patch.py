@@ -6,7 +6,8 @@ from eea.downloads.content.DirectoryView import PatchedDirectoryInformation
 
 def registerDirectoryByKey(self, filepath, reg_key, subdirs=1,
                                ignore=DirectoryView.ignore):
-
+    """ Custom behaviour for eea.downloads keys
+    """
     if 'eea.downloads' not in reg_key:
         return self._old_registerDirectoryByKey(
             filepath, reg_key, subdirs, ignore)

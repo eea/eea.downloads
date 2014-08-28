@@ -13,8 +13,10 @@ class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
     """ Custom Directoy Information
     """
     def _changed(self):
-        mtime=0
-        filelist=[]
+        """ Changed
+        """
+        mtime = 0
+        filelist = []
         try:
             mtime = os.stat(self._filepath)[8]
             if not self.use_dir_mtime:
@@ -24,8 +26,8 @@ class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
                 # changes
                 os.path.walk(self._filepath, self._walker, filelist)
                 filelist.sort()
-        except:
-            logger.exception("Error checking for directory modification")
+        except Exception, err:
+            logger.exception(err)
 
         if mtime != self._v_last_read or filelist != self._v_last_filelist:
             self._v_last_read = mtime
