@@ -29,7 +29,8 @@ class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
         except Exception, err:
             logger.exception(err)
 
-        if mtime != self._v_last_read or filelist != self._v_last_filelist:
+        if (mtime != getattr(self, '_v_last_read', None) or
+            filelist != getattr(self, '_v_last_filelist', None)):
             self._v_last_read = mtime
             self._v_last_filelist = filelist
 

@@ -8,6 +8,7 @@
   <include file="patches.zcml" />
   <include file="profiles.zcml" />
 
+  <include package=".storage" />
   <include package=".upgrades" />
 
 </configure>

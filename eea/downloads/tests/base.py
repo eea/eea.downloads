@@ -1,5 +1,8 @@
 """ Testing
 """
+import os
+import shutil
+import tempfile
 from plone.testing import z2
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
@@ -15,6 +18,10 @@ class EEAFixture(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """ Setup Zope
         """
+        self.PATH = tempfile.mkdtemp()
+        os.environ["EEADOWNLOADS_PATH"] = self.PATH
+        os.environ["EEADOWNLOADS_NAME"] = 'downloads'
+
         import eea.downloads
         self.loadZCML(package=eea.downloads)
         z2.installProduct(app, 'eea.downloads')
@@ -22,6 +29,7 @@ class EEAFixture(PloneSandboxLayer):
     def tearDownZope(self, app):
         """ Uninstall Zope
         """
+        shutil.rmtree(self.PATH)
         z2.uninstallProduct(app, 'eea.downloads')
 
     def setUpPloneSite(self, portal):

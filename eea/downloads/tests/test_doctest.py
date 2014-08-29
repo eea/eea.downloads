@@ -22,6 +22,12 @@ def test_suite():
             layer=FUNCTIONAL_TESTING),
         layered(
             doctest.DocFileSuite(
+                'storage/handler.py',
+                optionflags=OPTIONFLAGS,
+                package='eea.downloads'),
+            layer=FUNCTIONAL_TESTING),
+        layered(
+            doctest.DocFileSuite(
                 'README.txt',
                 optionflags=OPTIONFLAGS,
                 package='eea.downloads'),
