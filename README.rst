@@ -52,6 +52,27 @@ Getting started
 1. Login to ZMI
 2. Navigate to Plone > downloads
 
+Storage adapter
+===============
+This package defines a storage interface IStorage that you can use to get
+generated files system paths and Plone related URLs.
+Default strategy of storing files is::
+
+    EEADOWNLOADS_PATH / UID / t-MODIFIED / ID.EXTENSION
+
+Here is an example::
+
+    >>> from eea.downloads.interfaces import IStorage
+    >>> store = IStorage(context).of('pdf')
+    >>> store.filepath()
+    '/opt/downloads/uid-21323e2321312/t-3213213/context-id.pdf'
+
+    >>> store.absolute_url()
+    'http://localhost:8080/Plone/downloads/uid-21323e2321312/t-3213213/context-id.pdf'
+
+You can always provide a custom IStorage adapter for your Zope objects if you
+need other file-system storage layout.
+
 Dependencies
 ============
 
