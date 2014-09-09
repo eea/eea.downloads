@@ -37,13 +37,21 @@ class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
             return 1
         return 0
 
+class PatchedFSFile(FSFile.FSFile):
+    """ Custom FS File
+    """
+    manage_options = ({'label':'Properties', 'action':'manage_main'},)
+
+    manage_main = DirectoryView.DirectoryViewSurrogate.manage_propertiesForm
+
 def registerDirectory(filepath):
     """ Register file-system directory
     """
     return DirectoryView._dirreg.registerDirectoryByKey(filepath, PROJECTNAME)
 
 
-DirectoryView.registerFileExtension('epub', FSFile.FSFile)
+DirectoryView.registerFileExtension('pdf', PatchedFSFile)
+DirectoryView.registerFileExtension('epub', PatchedFSFile)
 
 __all__ = [
     createDirectoryView.__name__,
