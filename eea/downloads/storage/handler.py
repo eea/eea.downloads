@@ -44,10 +44,10 @@ class Storage(object):
         """ File-system absolute or relative path to containing folder
 
             >>> storage.filefolder()
-            '/tmp/tmp.../.../t-...'
+            '/tmp/tmp.../.../...'
 
             >>> storage.filefolder(relative=1)
-            '.../t-...'
+            '.../...'
 
         """
         paths = []
@@ -60,7 +60,7 @@ class Storage(object):
 
         modified = getattr(self.context, 'modified', lambda: None)()
         modified = getattr(modified, 'asdatetime', lambda: None)()
-        modified = getattr(modified, 'strftime', lambda format: 't-0')('t-%s')
+        modified = getattr(modified, 'strftime', lambda format: '0')('%s')
         if modified:
             paths.append(modified)
 
@@ -71,13 +71,13 @@ class Storage(object):
     def filepath(self, relative=False):
         """ Absolute or relative file-system path to file
 
-            / <ENVPATH> / <o.UID> / t-<o.modified> / <o.id>.pdf
+            / <ENVPATH> / <o.UID> / <o.modified> / <o.id>.pdf
             >>> storage.filepath()
-            '/tmp/tmp.../.../t-.../sandbox.pdf'
+            '/tmp/tmp.../.../.../sandbox.pdf'
 
-            <o.UID> / t-<o.modified> / <o.id>.pdf
+            <o.UID> / <o.modified> / <o.id>.pdf
             >>> storage.filepath(relative=1)
-            '.../t-.../sandbox.pdf'
+            '.../.../sandbox.pdf'
 
         """
         return os.path.join(
@@ -105,10 +105,10 @@ class Storage(object):
         """ Web URL to file
 
             >>> storage.absolute_url()
-            'http://nohost/plone/downloads/.../t-.../sandbox.pdf'
+            'http://nohost/plone/downloads/.../.../sandbox.pdf'
 
             >>> storage.absolute_url(1)
-            'plone/downloads/.../t-.../sandbox.pdf'
+            'plone/downloads/.../.../sandbox.pdf'
 
         """
 
