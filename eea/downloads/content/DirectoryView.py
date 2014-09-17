@@ -9,6 +9,7 @@ from eea.downloads.config import PROJECTNAME
 
 logger = logging.getLogger('eea.downloads')
 
+
 class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
     """ Custom Directoy Information
     """
@@ -37,12 +38,14 @@ class PatchedDirectoryInformation(DirectoryView.DirectoryInformation):
             return 1
         return 0
 
+
 class PatchedFSFile(FSFile.FSFile):
     """ Custom FS File
     """
     manage_options = ({'label':'Properties', 'action':'manage_main'},)
 
     manage_main = DirectoryView.DirectoryViewSurrogate.manage_propertiesForm
+
 
 def registerDirectory(filepath):
     """ Register file-system directory
@@ -52,6 +55,7 @@ def registerDirectory(filepath):
 
 DirectoryView.registerFileExtension('pdf', PatchedFSFile)
 DirectoryView.registerFileExtension('epub', PatchedFSFile)
+DirectoryView.registerFileExtension('tmp', PatchedFSFile)
 
 __all__ = [
     createDirectoryView.__name__,
