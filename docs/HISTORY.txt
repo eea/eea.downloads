@@ -3,7 +3,7 @@ Changelog
 
 1.1-dev - (unreleased)
 ----------------------
-* Feature: registered .tmp files for the "Filesystem Directory View"
+* Feature: registered .lock files for the "Filesystem Directory View"
   [ghicaale refs #20972]
 
 1.0 - (2014-09-15)

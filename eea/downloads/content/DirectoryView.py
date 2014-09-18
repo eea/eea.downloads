@@ -55,7 +55,7 @@ def registerDirectory(filepath):
 
 DirectoryView.registerFileExtension('pdf', PatchedFSFile)
 DirectoryView.registerFileExtension('epub', PatchedFSFile)
-DirectoryView.registerFileExtension('tmp', PatchedFSFile)
+DirectoryView.registerFileExtension('lock', PatchedFSFile)
 
 __all__ = [
     createDirectoryView.__name__,
