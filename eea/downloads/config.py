@@ -2,6 +2,8 @@
 """
 import os
 import logging
+from zope.i18nmessageid import MessageFactory
+
 logger = logging.getLogger('eea.downloads')
 
 PROJECTNAME = 'eea.downloads'
@@ -27,5 +29,4 @@ def ENVNAME():
         logger.warn('Missing environment var EEADOWNLOADS_NAME. Using %s', name)
     return name
 
-from zope.i18nmessageid import MessageFactory
 EEAMessageFactory = MessageFactory('eea')
