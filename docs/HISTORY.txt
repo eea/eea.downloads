@@ -3,6 +3,8 @@ Changelog
 
 1.6.dev0 - (unreleased)
 -----------------------
+* Feature: added translations
+  [irina-botez]
 
 1.5 - (2016-05-19)
 ------------------
