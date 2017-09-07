@@ -3,6 +3,8 @@ Changelog
 
 1.8.dev0 - (unreleased)
 -----------------------
+* Change: Possibility to register FS dirs from other projects
+  [avoinea]
 
 1.7 - (2017-04-24)
 ------------------

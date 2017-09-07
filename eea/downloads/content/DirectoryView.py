@@ -47,10 +47,10 @@ class PatchedFSFile(FSFile.FSFile):
     manage_main = DirectoryView.DirectoryViewSurrogate.manage_propertiesForm
 
 
-def registerDirectory(filepath):
+def registerDirectory(filepath, prj=PROJECTNAME):
     """ Register file-system directory
     """
-    return DirectoryView._dirreg.registerDirectoryByKey(filepath, PROJECTNAME)
+    return DirectoryView._dirreg.registerDirectoryByKey(filepath, prj)
 
 
 DirectoryView.registerFileExtension('pdf', PatchedFSFile)
