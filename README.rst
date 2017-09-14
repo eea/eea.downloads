@@ -1,10 +1,8 @@
 =============
 EEA Downloads
 =============
-.. image:: http://ci.eionet.europa.eu/job/eea.downloads-www/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea.downloads-www/lastBuild
-.. image:: http://ci.eionet.europa.eu/job/eea.downloads-plone4/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea.downloads-plone4/lastBuild
+.. image:: http://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/master/badge/icon
+  :target: http://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/master/display/redirect
 
 EEA Downloads (Media Storage) mounts a file-system directory within ZODB
 
