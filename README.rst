@@ -107,6 +107,6 @@ Funding
 
 EEA_ - European Environment Agency (EU)
 
-.. _EEA: http://www.eea.europa.eu/
-.. _`collective.monkeypatcher`: http://pypi.python.org/pypi/collective.monkeypatcher
-.. _`Products.CMFCore`: http://pypi.python.org/pypi/Products.CMFCore
+.. _EEA: https://www.eea.europa.eu/
+.. _`collective.monkeypatcher`: https://pypi.python.org/pypi/collective.monkeypatcher
+.. _`Products.CMFCore`: https://pypi.python.org/pypi/Products.CMFCore
