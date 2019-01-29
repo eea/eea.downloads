@@ -1,8 +1,12 @@
 =============
 EEA Downloads
 =============
-.. image:: http://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/master/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/master/display/redirect
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.downloads/develop
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/develop/display/redirect
+  :alt: Develop
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.downloads/master
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.downloads/job/master/display/redirect
+  :alt: Master
 
 EEA Downloads (Media Storage) mounts a file-system directory within ZODB
 
@@ -103,6 +107,6 @@ Funding
 
 EEA_ - European Environment Agency (EU)
 
-.. _EEA: http://www.eea.europa.eu/
-.. _`collective.monkeypatcher`: http://pypi.python.org/pypi/collective.monkeypatcher
-.. _`Products.CMFCore`: http://pypi.python.org/pypi/Products.CMFCore
+.. _EEA: https://www.eea.europa.eu/
+.. _`collective.monkeypatcher`: https://pypi.python.org/pypi/collective.monkeypatcher
+.. _`Products.CMFCore`: https://pypi.python.org/pypi/Products.CMFCore
