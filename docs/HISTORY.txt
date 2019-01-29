@@ -1,6 +1,9 @@
 Changelog
 =========
 
+2.2-dev0 - (unreleased)
+---------------------
+
 2.1 - (2019-01-28)
 -----------------------
 * Jenkins: Add sonarqube step
@@ -77,4 +80,3 @@ Changelog
 * Pre-upgrade step: Within your buildout define environment-vars per instance:
   EEADOWNLOADS_NAME and EEADOWNLOADS_PATH
   [voineali refs #20677]
-
